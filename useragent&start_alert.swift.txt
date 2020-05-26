@@ -1,0 +1,43 @@
+//useragent와 시작 alert창
+
+ override func viewDidAppear(_ animated: Bool) {
+
+        
+
+        if #available(iOS 13.4.1, *) {
+
+            
+
+        } else {
+
+            let dialog = UIAlertController(title: "eyenshop", message: "안경원 찾기는 iOS 13.4.1이상 이용 가능합니다. iOS 최신버전으로 업데이트 해주세요", preferredStyle: UIAlertController.Style.alert)
+
+            
+
+            let action = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+
+            dialog.addAction(action)
+
+            
+
+            present(dialog, animated: false, completion: nil)
+
+        }
+
+        
+
+        /*let useragent: Void = webview_1.evaluateJavaScript("navigator.userAgent", completionHandler: {
+
+            (any, err) -> Void in
+
+            print(err ?? "no error")
+
+        })
+
+        UserDefaults.standard.register(defaults: ["UserAgent": useragent])
+
+        */
+
+        webview_1.customUserAgent = "Mozilla/5.0 (iPhone; U; ru; CPU iPhone OS 4_2_1 like Mac OS X; ru) AppleWebKit/605.1.15 (KHTML, like Gecko) eyenshop_iOS"
+
+    }
